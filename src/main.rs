@@ -13,7 +13,7 @@ struct Bot;
 #[async_trait]
 impl EventHandler for Bot {
     async fn message(&self, ctx: Context, msg: Message) {
-        if msg.content == "!start pomodoro" {
+        if msg.content == "!pomodomo " {
             if let Err(e) = msg.channel_id.say(&ctx.http, "Starting pomodoro...").await {
                 error!("Error sending message: {:?}", e);
             }
